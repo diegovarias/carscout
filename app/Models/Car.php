@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Car extends Model
 {
     use HasFactory;
+
+    /**
+     * The users that belong to the car.
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\Models\User');
+    }
 }
